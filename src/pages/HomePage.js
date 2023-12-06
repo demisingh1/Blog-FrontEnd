@@ -6,11 +6,13 @@ const HomePage = () => {
   const {posts} = usePostContext();
   // console.log(posts);
   return (
-    <div>
-      HomePage
+    <div className='home-container'>
+    <div className='post-card-container'>
+      
       {posts.map((post)=>{
-        return <HomePostsList key={post.id} {...post} />
+        return <HomePostsList key={post._id} {...post} />
       })}
+    </div>
     </div>
   )
 }

@@ -29,7 +29,7 @@ const LoginPage = () => {
   }
  
   return (
-    <div>
+    <div className='Login-Container'>
       <form onSubmit={handleSubmit(onLogin)}>
         <label htmlFor="">Email:</label>
         <input type="text" placeholder='Enter Email' {...register('email',{required:true})} />
@@ -37,7 +37,7 @@ const LoginPage = () => {
         <input type="text" placeholder='password' {...register('password',{required:true})} />
         <label htmlFor="">ConfirmPassword:</label>
         <input type="text" placeholder='confirmpassword' {...register('confirmpassword',{required:true})} />
-        <button>Login In</button>
+        <button className='btn'>Login In</button>
       </form>
     </div>
   )

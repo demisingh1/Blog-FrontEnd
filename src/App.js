@@ -8,6 +8,7 @@ import RegisterPage from './pages/RegisterPage'
 import Dashboard from './pages/Dashboard';
 import { loader as dashboardLoader } from './pages/Dashboard';
 import ProtectedRoute from './pages/ProtectedRoute';
+import AddPost from './pages/AddPost';
 const router = createBrowserRouter([
   {
     path:'/',
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path:'dashboard',
         element: <ProtectedRoute Page ={Dashboard} /> ,
         loader:dashboardLoader,
+      },
+      {
+        path:'addpost',
+        element:<ProtectedRoute Page={AddPost}/>
       }
     ]
   }

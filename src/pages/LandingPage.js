@@ -18,9 +18,11 @@ const LandingPage = () => {
       {user ? (
         <nav>
           <NavLink to="/">Home</NavLink>
-          <Link className="btn" style={{padding:5, backgroundColor:'transparent', borderRadius:'none'}}
+          <NavLink className="btn" style={{padding:5, backgroundColor:'transparent', borderRadius:'none'}}
           onClick={logout}
-          >LogOut</Link>
+          >LogOut</NavLink>
+          <NavLink to='/addpost' >ADD POST</NavLink>
+          <NavLink to='dashboard' >DashBoard</NavLink>
         </nav>
       ) : (
         <nav>

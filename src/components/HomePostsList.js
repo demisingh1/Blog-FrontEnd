@@ -10,8 +10,8 @@ const HomePostsList = ({...post}) => {
       </div>
       <div className='card-text-container'>
       <h1>{title}</h1>        
-        <h4>{description}</h4>
-        <h3>{user.name}</h3>
+        {/* <h4>{description}</h4> */}
+        <h3>USER:{user.name}</h3>
       </div>
         
     </div>

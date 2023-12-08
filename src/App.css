@@ -68,6 +68,11 @@ nav a.active{
   color: teal;
   background-color: thistle;
 }
+.post-btn{
+  margin-top: 10px;
+  width:100px;
+  padding:10px;
+}
 .home-container{
   height: 100vh;
   width: 80%;
@@ -109,4 +114,62 @@ flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   padding: 10px;
+}
+.post-container{
+  width: 80%;
+  margin: 5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Add-post-form{
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  width: 50rem;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 15px 5px 15px 5px black;
+}
+.post-input{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+}
+.post-input input{
+  padding: 5px;
+  font-size: 18px;
+  transition: all .5s;
+  outline:none;
+  border:3px solid grey
+}
+.post-input input[type= "text"]:focus{
+border: 3px solid black;  
+}
+
+.post-input input[type='file'] {
+  border: none;
+}
+.post-input textarea{
+  padding: 5px;
+  font-size: 18px;
+  transition: all .5s;
+  outline:none;
+  border:3px solid grey
+}
+.post-input textarea:focus{
+  border: 3px solid black;  
+}
+.post-container form .post-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  margin-bottom: 25px;
+  height: 5rem;
+  width: 30rem;
+  background-color: grey;
+  color: white;
 }

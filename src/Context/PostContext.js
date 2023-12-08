@@ -24,7 +24,7 @@ const GetAllPosts = async()=>{
     GetAllPosts()
    },[])
                       
-  return <PostContext.Provider value = {{...state}}>
+  return <PostContext.Provider value = {{...state , dispatch}}>
     {children}
   </PostContext.Provider>
 }

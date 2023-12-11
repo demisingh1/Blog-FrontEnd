@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import { loader as dashboardLoader } from './pages/Dashboard';
 import ProtectedRoute from './pages/ProtectedRoute';
 import AddPost from './pages/AddPost';
+import SinglePostPage from './pages/SinglePostPage';
 const router = createBrowserRouter([
   {
     path:'/',
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path:'addpost',
         element:<ProtectedRoute Page={AddPost}/>
+      },
+      {
+        path:'/:id',
+        element:<ProtectedRoute Page={SinglePostPage} />
       }
     ]
   }

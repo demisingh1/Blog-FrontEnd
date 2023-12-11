@@ -1,4 +1,4 @@
-import { SHOW_ALL_POSTS, USER_POSTS } from "../Actions"
+import { SHOW_ALL_POSTS, SINGLE_POST, USER_POSTS } from "../Actions"
 
 const posts_reducer = (state, action) =>{
     if(SHOW_ALL_POSTS === action.type){
@@ -6,6 +6,9 @@ const posts_reducer = (state, action) =>{
     }
   if(USER_POSTS === action.type){
     return{...state , userPosts:action.payload}
+  }
+  if(SINGLE_POST === action.type){
+    return{...state , SinglePost:action.payload}
   }
     return state
 }

@@ -1,11 +1,12 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import reducer from '../reducers/PostsReducer'
-import { SHOW_ALL_POSTS } from "../Actions";
+import { SHOW_ALL_POSTS, SINGLE_POST } from "../Actions";
 import axios from "axios";
 export const PostContext = createContext();
 const initialState= {
     posts:[],
     userPosts:[],
+    SinglePost:{},
 }
 export const PostContextProvider = ({children})=>{
    const[state, dispatch] = useReducer(reducer , initialState)
@@ -23,8 +24,15 @@ const GetAllPosts = async()=>{
    useEffect(()=>{
     GetAllPosts()
    },[])
+   // single post fetch
+
+   const fetchSinglePost = async (id)=>{
+    const res = await axios.get(`/posts/${id}`)
+    // console.log(res.data.message);
+    dispatch({type:SINGLE_POST , payload:res.data.message})
+   }
                       
-  return <PostContext.Provider value = {{...state , dispatch}}>
+  return <PostContext.Provider value = {{...state , dispatch, fetchSinglePost}}>
     {children}
   </PostContext.Provider>
 }

@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const DashBoardPostList = ({ title, description, imgurl,}) => {
-  // console.log(post)
+
+const DashBoardPostList = ({ title, description, imgurl, _id}) => {
+  // console.log(post);
+  
   return (
-    <div className="post-card">
+    <Link to = {`/${_id}`}  className="post-card">
       <div className="image-container">
         <img src={imgurl} alt="image name" className="img" />
       </div>
@@ -11,7 +14,7 @@ const DashBoardPostList = ({ title, description, imgurl,}) => {
         <h1>{title}</h1>
         <h4>{description}</h4>
       </div>
-    </div>
+    </Link>
   );
 };
 

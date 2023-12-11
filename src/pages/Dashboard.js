@@ -9,7 +9,7 @@ import DashBoardPostList from '../components/DashBoardPostList'
 export const loader = async()=>{
     try {
         const data = await axios.get('/posts')
-        // console.log(data)
+        console.log(data)
         const SingleUser = await axios.get('/api/singleuser') // user detail fetched from database directly
         // console.log(SingleUser.data)
         return {data, SingleUser}

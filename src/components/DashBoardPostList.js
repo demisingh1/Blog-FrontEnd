@@ -8,7 +8,7 @@ const DashBoardPostList = ({ title, description, imgurl, _id}) => {
   return (
     <Link to = {`/${_id}`}  className="post-card">
       <div className="image-container">
-        <img src={imgurl} alt="image name" className="img" />
+        <img src={imgurl} alt="blog name" className="img" />
       </div>
       <div className="card-text-container">
         <h1>{title}</h1>

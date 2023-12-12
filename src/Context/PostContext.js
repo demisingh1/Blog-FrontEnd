@@ -23,7 +23,7 @@ const GetAllPosts = async()=>{
 
    useEffect(()=>{
     GetAllPosts()
-   },[])
+   },[state.SinglePost])
    // single post fetch
 
    const fetchSinglePost = async (id)=>{

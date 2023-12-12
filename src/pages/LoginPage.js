@@ -2,9 +2,9 @@ import axios from 'axios'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useUserContext } from '../Context/UserContext'
-import { redirect, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import { USER_LOGIN } from "../Actions";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 const LoginPage = () => {
   const{handleSubmit, register} = useForm()

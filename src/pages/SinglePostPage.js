@@ -12,7 +12,7 @@ const SinglePostPage = () => {
   return (
     <div className='single-post-container'>
         <div className='conainer-post'>
-        <img src={imgurl} alt="photo-splash" />
+        <img src={imgurl} alt="splash" />
         <div>
             <h2>{title}</h2>
             <p>{description}</p>

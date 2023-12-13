@@ -8,9 +8,9 @@ import DashBoardPostList from '../components/DashBoardPostList'
 
 export const loader = async()=>{
     try {
-        const data = await axios.get('https://demiblogs.onrender.com/posts')
+        const data = await axios.get('http://demiblogs.onrender.com/posts')
         console.log(data)
-        const SingleUser = await axios.get('https://demiblogs.onrender.com/api/singleuser') // user detail fetched from database directly
+        const SingleUser = await axios.get('http://demiblogs.onrender.com/api/singleuser') // user detail fetched from database directly
         // console.log(SingleUser.data)
         return {data, SingleUser}
         // return data;  

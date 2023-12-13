@@ -12,7 +12,7 @@ const AddPost = () => {
     console.log(data);
     let image = data.image[0];
     const res = await axios.post(
-      "http://demiblogs.onrender.com/posts",
+      "https://demiblogs.onrender.com/posts",
       {
         title: data.title,
         image:image,

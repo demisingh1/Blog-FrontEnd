@@ -17,7 +17,7 @@ const LoginPage = () => {
       return alert('password not matched!@')
     }
     // console.log(data);
-    const res = await axios.post('http://demiblogs.onrender.com/api/user/signin',{
+    const res = await axios.post('https://demiblogs.onrender.com/api/user/signin',{
       email,password
     })
     console.log(res);

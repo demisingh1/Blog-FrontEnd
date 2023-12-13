@@ -13,7 +13,7 @@ export const PostContextProvider = ({children})=>{
 
 const GetAllPosts = async()=>{
     try {
-        const posts = await axios.get('/AllPosts')
+        const posts = await axios.get('https://demiblogs.onrender.com/AllPosts')
     // console.log(posts.data.AllPosts);
     dispatch({type:SHOW_ALL_POSTS, payload:posts.data.AllPosts})
     } catch (error) {

@@ -8,7 +8,7 @@ const SinglePostPage = () => {
    const {title,description,imgurl} = SinglePost
    useEffect(()=>{
     fetchSinglePost(id)
-   },[id])
+   },[fetchSinglePost , id])
   return (
     <div className='single-post-container'>
         <div className='conainer-post'>

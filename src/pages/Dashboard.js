@@ -29,7 +29,7 @@ const Dashboard = () => {
    useEffect(()=>{
     //  dispatch({type:USER_LOGIN, payload:SingleUser.data.message}) // no need to fetch the user AGAIn ALREADY FETCHED FROM THE LOGIN PAGE AND SAVED To LOCAL STORAGE
      dispatch({type:USER_POSTS, payload:data.data.message})
-   },[data.data.message])
+   },[data.data.message, dispatch])
     
 
 return <div className='post-card-container'>

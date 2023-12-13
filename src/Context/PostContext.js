@@ -27,7 +27,7 @@ const GetAllPosts = async()=>{
    // single post fetch
 
    const fetchSinglePost = async (id)=>{
-    const res = await axios.get(`/posts/${id}`)
+    const res = await axios.get(`https://demiblogs.onrender.com/posts/${id}`)
     // console.log(res.data.message);
     dispatch({type:SINGLE_POST , payload:res.data.message})
    }

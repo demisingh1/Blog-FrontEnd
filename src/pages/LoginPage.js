@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useUserContext } from '../Context/UserContext'
 import {  useNavigate } from 'react-router-dom'
@@ -10,6 +10,7 @@ const LoginPage = () => {
   const{handleSubmit, register} = useForm()
   const{dispatch}= useUserContext();
   const navigate = useNavigate();
+  const [error , setError] = useState();
 
   const onLogin = async (data)=>{
     const{email,password,confirmpassword} = data
@@ -17,15 +18,22 @@ const LoginPage = () => {
       return alert('password not matched!@')
     }
     // console.log(data);
-    const res = await axios.post('https://demiblogs.onrender.com/api/user/signin',{
-      email,password
-    })
-    console.log(res);
-       const user = res.data.ExistingUser
-    dispatch({type:USER_LOGIN ,payload:{...user}})
-    localStorage.setItem('user' , JSON.stringify(user))
-    navigate('/dashboard');
-            
+    try {
+      const res = await axios.post('/api/user/signin',{
+        email,password
+      })
+      console.log(res);
+         const user = res.data.ExistingUser
+      dispatch({type:USER_LOGIN ,payload:{...user}})
+      localStorage.setItem('user' , JSON.stringify(user))
+      navigate('/dashboard');
+              
+    } catch (error) {
+      console.log(error.message);
+      if(error) setError(error.response.data.message)
+      
+    }
+   
   }
  
   return (
@@ -38,6 +46,7 @@ const LoginPage = () => {
         <label htmlFor="">ConfirmPassword:</label>
         <input type="text" placeholder='confirmpassword' {...register('confirmpassword',{required:true})} />
         <button className='btn'>Login In</button>
+        <div><h2>{error}</h2></div>
       </form>
     </div>
   )

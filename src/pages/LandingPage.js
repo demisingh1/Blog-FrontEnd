@@ -8,7 +8,7 @@ const LandingPage = () => {
  const navigate = useNavigate();
   const { user,dispatch } = useUserContext();
   const logout =async()=>{
-     await axios.get('/api/user/logout')
+     await axios.get('http://localhost:8000/api/user/logout')
     dispatch({type:USER_LOGOUT,})
     localStorage.removeItem('user')
     navigate('/');

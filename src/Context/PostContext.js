@@ -13,7 +13,7 @@ export const PostContextProvider = ({children})=>{
 
 const GetAllPosts = async()=>{
     try {
-        const posts = await axios.get('https://demiblogs.onrender.com/AllPosts')
+        const posts = await axios.get('/AllPosts')
     // console.log(posts.data.AllPosts);
     dispatch({type:SHOW_ALL_POSTS, payload:posts.data.AllPosts})
     } catch (error) {
@@ -27,7 +27,7 @@ const GetAllPosts = async()=>{
    // single post fetch
 
    const fetchSinglePost = async (id)=>{
-    const res = await axios.get(`https://demiblogs.onrender.com/posts/${id}`)
+    const res = await axios.get(`/posts/${id}`)
     // console.log(res.data.message);
     dispatch({type:SINGLE_POST , payload:res.data.message})
    }
